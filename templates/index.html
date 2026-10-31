@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Next Word Prediction</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <p class="tag">DEEP LEARNING PROJECT</p>
+            <h1>Next Word <span>Prediction</span></h1>
+            <p class="subtitle">
+                Generate text using your trained GRU / LSTM model.
+            </p>
+        </header>
+
+        <main class="prediction-card">
+
+            <label for="prompt">Enter your starting sentence</label>
+
+            <textarea
+                id="prompt"
+                placeholder="Example: The movie was really..."
+                rows="5"
+            ></textarea>
+
+            <div class="controls">
+
+                <div>
+                    <label for="numWords">Words to generate</label>
+
+                    <select id="numWords">
+                        <option value="5">5 words</option>
+                        <option value="10" selected>10 words</option>
+                        <option value="20">20 words</option>
+                        <option value="30">30 words</option>
+                        <option value="50">50 words</option>
+                    </select>
+                </div>
+
+                <button id="predictBtn" onclick="predictText()">
+                    Generate Text
+                </button>
+
+            </div>
+
+            <div id="loading" class="loading hidden">
+                Generating text...
+            </div>
+
+            <div id="error" class="error hidden"></div>
+
+            <section id="resultSection" class="result hidden">
+
+                <h2>Generated Text</h2>
+
+                <p id="generatedText"></p>
+
+                <button id="copyBtn" onclick="copyResult()">
+                    Copy Text
+                </button>
+
+            </section>
+
+        </main>
+
+        <footer>
+            IMDb Next Word Prediction | GRU / LSTM
+        </footer>
+
+    </div>
+
+    <script src="/static/js/app.js"></script>
+
+</body>
+</html>
